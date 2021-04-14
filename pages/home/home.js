@@ -8,9 +8,13 @@ Page({
    */
   data: {
     appsList:[]
+    
 
   },
-
+  QueryParams:{
+    pageNum:1,
+    pageSize:2
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -19,10 +23,12 @@ Page({
 
   },
   async getAppsList(){
-    const res=await request({url:"wxappfavoritenum/list"});
+    const res=await request({url:"wxappfavoritenum/list",data:this.QueryParams});
     this.setData({
       appsList:res.data.dataZone.pageInfo.list
     })
+    console.log(res);
+    console.log(this.QueryParams);
   },
 
   /**
@@ -64,6 +70,8 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+
+
 
   },
 

@@ -30,7 +30,7 @@
   color: #a8a7a7fa;
 }
 .first_tab{
-  border-bottom:2rpx solid #cccccc;
+  border-bottom:3rpx solid #cccccc;
 }
 .apps{
   display: flex;
