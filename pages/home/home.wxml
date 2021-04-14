@@ -1,0 +1,38 @@
+<!--pages/home/home.wxml-->
+<view class="top">
+  <view class="topsearch">
+    <view class="frame">
+      <input value="{{searchingtext}}" bindinput="searchinginput"></input>
+    </view>
+    <text class="searchtext" bindtap="search">搜索</text>
+  </view>
+</view>
+<view class="first_tab">
+  <navigator class="apps"
+    wx:for="{{appsList}}"
+    wx:key="appName"
+    >
+    <view class="app_picture">
+      <image mode="widthFix" src="{{item.picture}}"></image>
+    </view>
+    <view class="apps_introduction">
+      <view class="app_name">
+        {{item.appName}}
+      </view>
+      <view class="app_intorduction">
+        {{item.introduction}}
+      </view>
+      <view class="app_favorite">
+        <view class="app_favoritepicture">
+          <image mode="widthFix" src="../../icon/.favorite.png"></image>
+        </view>
+        <view class="app_favoritenum">{{item.favoritenum}}</view>
+      </view>
+    </view>
+
+  </navigator>
+
+</view>
+
+
+

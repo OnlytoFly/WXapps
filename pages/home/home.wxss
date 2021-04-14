@@ -1,0 +1,82 @@
+/* pages/home/home.wxss */
+.top {
+  width: 100%;
+  background-color: #f7f7f7;
+}
+ 
+.topsearch {
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  padding: 2% 0;
+  align-items: center;
+}
+
+.frame {
+  background-color: white;
+  width: 75%;
+  border-radius: 20rpx;
+  padding: 0 3%;
+}
+ 
+.frame>input {
+  font-size: 24rpx;
+  margin: 6rpx 0;
+}
+ 
+.topsearch>text {
+  width: 12%;
+  margin-left:5%;
+  color: #a8a7a7fa;
+}
+.first_tab{
+  border-bottom:2rpx solid #cccccc;
+}
+.apps{
+  display: flex;
+}
+.app_picture{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
+}
+image{
+  width: 70%;
+}
+.apps_introduction{
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+} 
+.app_name{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.app_introduction{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.app_favorite{
+  display: flex;
+}
+.app_favoritepicture{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.app_favoritenum{
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #DC143C;
+  font-size: 32rpx;
+
+}
