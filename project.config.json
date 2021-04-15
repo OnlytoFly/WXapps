@@ -40,9 +40,9 @@
     "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.0.4",
-  "appid": "wx14139f2695de6dec",
-  "projectname": "chest",
+  "libVersion": "2.16.0",
+  "appid": "wxc5d7b9170edcd0c5",
+  "projectname": "WXapps",
   "debugOptions": {
     "hidedInDevtools": []
   },

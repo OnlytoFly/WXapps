@@ -1,2 +1,3 @@
 <!--pages/mine/mine.wxml-->
-
+<button bindtap="getUserProfile"> 获取头像昵称 </button>
+<button bindtap="getAppsList"> 123 </button>
