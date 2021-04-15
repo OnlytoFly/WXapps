@@ -7,13 +7,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    appsList:[]
-    
+    appsList:[],
+    hasNextPage:""
 
   },
   QueryParams:{
     pageNum:1,
-    pageSize:2
+    pageSize:5
   },
   /**
    * 生命周期函数--监听页面加载
@@ -25,7 +25,8 @@ Page({
   async getAppsList(){
     const res=await request({url:"wxappfavoritenum/list",data:this.QueryParams});
     this.setData({
-      appsList:res.data.dataZone.pageInfo.list
+      appsList:[...this.data.appsList,...res.data.dataZone.pageInfo.list],
+      hasNextPage:res.data.dataZone.pageInfo.hasNextPage
     })
     console.log(res);
     console.log(this.QueryParams);
@@ -71,7 +72,10 @@ Page({
    */
   onReachBottom: function () {
 
-
+   if(this.data.hasNextPage){
+     this.QueryParams.pageNum++;
+     this.getAppsList();
+   }
 
   },
 
