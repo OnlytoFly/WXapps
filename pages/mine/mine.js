@@ -7,8 +7,8 @@ Page({
    /* 页面的初始数据
    */
   data: {
-    test:[]
-
+    test:[],
+    userinfo:{}
   },
   loginParams: {
     encryptedData:"",
@@ -29,13 +29,18 @@ Page({
       }
      })
   },
-  async getAppsList(){
+  async getuserinfo(){
     const res=await request({url:"wxuserinfo/id",data:this.loginParams});
     this.setData({
       test:res
     })
     //console.log(this.data.code);
     console.log(res);
+    wx.setStorageSync('userInfo', res.data.userInfo)
+    const userinfo=wx.getStorageSync('userInfo');
+    this.setData({
+      userinfo:userinfo
+    })
     
   }, 
   getUserProfile(e) {
@@ -46,6 +51,7 @@ Page({
         this.loginParams.encryptedData=res.encryptedData;
         this.loginParams.iv=res.iv;
         //console.log(this.loginParams);
+        this.getuserinfo();
       }
     })
   },

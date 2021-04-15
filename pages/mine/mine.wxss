@@ -1,1 +1,35 @@
 /* pages/mine/mine.wxss */
+.user_info_wrap{
+   height: 45vh;
+   background-color: #00ffc8;
+   overflow: hidden;
+}
+.user_img_wrap{
+  position: relative;
+
+}
+.user_bg{
+  height: 45vh;
+  filter: blur(5rpx);
+
+}
+.user_info{
+  position: absolute;
+  left: 50%;
+  transform:translate(-50%);
+  top: 30%;
+  text-align: center;
+
+}
+.user_icon{
+
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.user_name{
+
+  color: #fff;
+  margin-top: 40rpx;
+  font-size: 40rpx;
+}
