@@ -24,7 +24,8 @@
       </view>
       <view class="app_favorite">
         <view class="app_favoritepicture">
-          <image mode="widthFix" src="../../icon/.favorite.png"></image>
+          <image mode="widthFix" catchtap="disloveit" data-appname="{{index}}" wx:if="{{favoriteList[index]}}" src="../../icon/veryFavorite.png"></image>
+          <image mode="widthFix" catchtap="disloveit" data-appname="{{index}}" wx:else  src="../../icon/.favorite.png"></image>
         </view>
         <view class="app_favoritenum">{{item.favoritenum}}</view>
       </view>

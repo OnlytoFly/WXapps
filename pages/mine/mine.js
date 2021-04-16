@@ -1,5 +1,6 @@
 
 import {request} from "../../request/index.js"
+import {postrequest} from "../../request/index.js"
 import {regeneratorRuntime} from "../../lib/runtime/runtime"
 // pages/mine/mine.js
 
@@ -7,13 +8,15 @@ Page({
    /* 页面的初始数据
    */
   data: {
-    test:[],
     userinfo:{}
   },
   loginParams: {
     encryptedData:"",
     iv:"",
     code:""
+  },
+  WXuser: {
+    wxuserid:"12345",
   },
 
   /**
@@ -29,19 +32,21 @@ Page({
       }
      })
   },
-  async getuserinfo(){
-    const res=await request({url:"wxuserinfo/id",data:this.loginParams});
-    this.setData({
-      test:res
-    })
-    //console.log(this.data.code);
-    console.log(res);
-    wx.setStorageSync('userInfo', res.data.userInfo)
+  async getuserinfoAndsignup(){
+    const res1=await request({url:"wxuserinfo/id",data:this.loginParams});
+    wx.setStorageSync('userInfo', res1.data.userInfo)
     const userinfo=wx.getStorageSync('userInfo');
     this.setData({
       userinfo:userinfo
     })
-    
+    this.WXuser.wxuserid=this.data.userinfo.openId;
+    const res2=await postrequest({url:"wxuser/opt",data:this.WXuser,method:"POST"});
+    await wx.showToast({
+      title:res2.data.message,
+      icon:'success',
+      duration:2000
+    }) 
+
   }, 
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
@@ -51,7 +56,7 @@ Page({
         this.loginParams.encryptedData=res.encryptedData;
         this.loginParams.iv=res.iv;
         //console.log(this.loginParams);
-        this.getuserinfo();
+        this.getuserinfoAndsignup();
       }
     })
   },
