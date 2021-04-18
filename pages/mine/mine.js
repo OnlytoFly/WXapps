@@ -42,7 +42,6 @@ Page({
   onShow: function () {
 
     this.setData({
-      favoriteList:wx.getStorageSync('favoriteList'),
       appsList:wx.getStorageSync('appsList'),
       isMoveout:false,
       changeFavorite:{},
@@ -51,7 +50,7 @@ Page({
 
   },
   onHide: function () {
-    wx.setStorageSync('favoriteList', this.data.favoriteList)
+    wx.setStorageSync('appsList', this.data.appsList)
 
   },
   async getuserinfoAndsignup(){
@@ -70,11 +69,14 @@ Page({
     })
     if(this.islogin()){
       const res3=await request({url:"wxuserfavorite/opt/"+wx.getStorageSync('userInfo').openId});
-      this.setData({
-        favoriteList:res3.data.dataZone.WXuserFavorite,
-
-      })
-      wx.setStorageSync('favoriteList', this.data.favoriteList);
+      for(var i=0;this.data.appsList[i];i++){
+        var temp = 'appsList[' + i +'].islove';
+        this.setData({
+          [temp]:res3.data.dataZone.WXuserFavorite[i],
+  
+        })
+      }
+      wx.setStorageSync('appsList', this.data.appsList);
       //console.log(this.data.favoriteList);
       //console.log(this.QueryParams);
       return true;
@@ -118,26 +120,38 @@ Page({
 
     if(this.islogin()){
       var num=e.currentTarget.dataset.appname;
-      var temp = 'favoriteList[' + num +']'
+      var temp = 'appsList[' + num +'].islove'
       this.setData({
-        [temp]:!this.data.favoriteList[num],
+        [temp]:!this.data.appsList[num].islove,
       })
       temp = 'changeFavorite';
       this.setData({
         [temp+'.uid']:wx.getStorageSync('userInfo').openId,
       })
       temp += '.app';
-      for(var i=1;this.data.favoriteList[i-1]!=null;i++){
+      for(var i=1;this.data.appsList[i-1]!=null;i++){
         this.setData({
-          [temp+i]:this.data.favoriteList[i-1],
+          [temp+i]:this.data.appsList[i-1].islove,
         })
       }
       const res=await request({url:"wxuserfavorite/change",data:this.data.changeFavorite});
-      
+
+      temp = 'appsList['+num+'].favoritenum'
+      //console.log(temp);
+      //console.log(this.data);
+      if(this.data.appsList[num].islove){
+        this.setData({
+          [temp]:this.data.appsList[num].favoritenum+1
+        })
+      }
+      else{
+        this.setData({
+          [temp]:this.data.appsList[num].favoritenum-1
+        })
+      }
     }
     else{
       return false;
     }
-
   },
 })

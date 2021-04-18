@@ -4,12 +4,12 @@
     <view class="frame">
       <input value="{{searchingtext}}" bindinput="searchinginput"></input>
     </view>
-    <text class="searchtext" bindtap="search">搜索</text>
+    <text class="searchtext">搜索</text>
   </view>
 </view>
 <view class="first_tab">
   <navigator class="apps"
-    wx:for="{{appsList}}"
+    wx:for="{{showList}}"
     wx:key="appName"
     >
     <view class="app_picture">
@@ -24,8 +24,8 @@
       </view>
       <view class="app_favorite">
         <view class="app_favoritepicture">
-          <image mode="widthFix" catchtap="disloveit" data-appname="{{index}}" wx:if="{{favoriteList[index]}}" src="../../icon/veryFavorite.png"></image>
-          <image mode="widthFix" catchtap="disloveit" data-appname="{{index}}" wx:else  src="../../icon/.favorite.png"></image>
+          <image mode="widthFix" catchtap="disloveit" data-appnum="{{item.inappsNum}}" data-shownum="{{index}}" wx:if="{{item.islove}}" src="../../icon/veryFavorite.png"></image>
+          <image mode="widthFix" catchtap="disloveit" data-appnum="{{item.inappsNum}}" data-shownum="{{index}}" wx:else  src="../../icon/.favorite.png"></image>
         </view>
         <view class="app_favoritenum">{{item.favoritenum}}</view>
       </view>
