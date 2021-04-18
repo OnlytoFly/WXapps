@@ -22,8 +22,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getAppsList();
-    this.loaduserFavorite();
+    wx.clearStorageSync();
 
   },
   async getAppsList(){
@@ -35,6 +34,30 @@ Page({
     //console.log(res);
     //console.log(this.QueryParams);
   },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+    this.setData({
+      appsList:[],
+      hasNextPage:"",
+      favoriteList:[],
+      changeFavorite:{},
+    })
+    this.getAppsList();
+    this.loaduserFavorite();
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+    wx.setStorageSync('favoriteList', this.data.favoriteList);
+    wx.setStorageSync('appsList', this.data.appsList);
+
+  },
   islogin(){
 
     if(wx.getStorageSync('userInfo')){
@@ -45,12 +68,28 @@ Page({
     }
 
   },
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+    if(this.data.hasNextPage){
+      this.QueryParams.pageNum++;
+      this.getAppsList();
+    }
+ 
+   },
+   /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
   async loaduserFavorite(){
 
     if(this.islogin()){
-      const res=await request({url:"wxuserfavorite/opt/"+wx.getStorageSync('userInfo').openId});
       this.setData({
-        favoriteList:res.data.dataZone.WXuserFavorite,
+        favoriteList:wx.getStorageSync('favoriteList'),
 
       })
       //console.log(this.data.favoriteList);
@@ -83,8 +122,8 @@ Page({
       const res=await request({url:"wxuserfavorite/change",data:this.data.changeFavorite});
 
       temp = 'appsList['+num+'].favoritenum'
-      console.log(temp);
-      console.log(this.data);
+      //console.log(temp);
+      //console.log(this.data);
       if(this.data.favoriteList[num]){
         this.setData({
           [temp]:this.data.appsList[num].favoritenum+1
@@ -101,57 +140,5 @@ Page({
     }
 
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
 
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-   if(this.data.hasNextPage){
-     this.QueryParams.pageNum++;
-     this.getAppsList();
-   }
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

@@ -8,7 +8,11 @@ Page({
    /* 页面的初始数据
    */
   data: {
-    userinfo:{}
+    appsList:[],
+    userinfo:{},
+    favoriteList:[],
+    isMoveout:"",
+    changeFavorite:{},
   },
   loginParams: {
     encryptedData:"",
@@ -31,6 +35,24 @@ Page({
         thisblock.loginParams.code=res.code;
       }
      })
+     this.setData({
+      isMoveout:false,
+    })
+  },
+  onShow: function () {
+
+    this.setData({
+      favoriteList:wx.getStorageSync('favoriteList'),
+      appsList:wx.getStorageSync('appsList'),
+      isMoveout:false,
+      changeFavorite:{},
+    })
+    //console.log(this.data.favoriteList);
+
+  },
+  onHide: function () {
+    wx.setStorageSync('favoriteList', this.data.favoriteList)
+
   },
   async getuserinfoAndsignup(){
     const res1=await request({url:"wxuserinfo/id",data:this.loginParams});
@@ -45,9 +67,33 @@ Page({
       title:res2.data.message,
       icon:'success',
       duration:2000
-    }) 
+    })
+    if(this.islogin()){
+      const res3=await request({url:"wxuserfavorite/opt/"+wx.getStorageSync('userInfo').openId});
+      this.setData({
+        favoriteList:res3.data.dataZone.WXuserFavorite,
+
+      })
+      wx.setStorageSync('favoriteList', this.data.favoriteList);
+      //console.log(this.data.favoriteList);
+      //console.log(this.QueryParams);
+      return true;
+    }
+    else{
+      return false;
+    } 
 
   }, 
+  islogin(){
+
+    if(wx.getStorageSync('userInfo')){
+      return true;
+    }
+    else{
+      return false;
+    }
+
+  },
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
     wx.getUserProfile({
@@ -59,5 +105,39 @@ Page({
         this.getuserinfoAndsignup();
       }
     })
+  },
+  changeMode(){
+    this.setData({
+      isMoveout:!this.data.isMoveout,
+    })
+  },
+  doNothing(){
+
+  },
+  async disloveit(e){
+
+    if(this.islogin()){
+      var num=e.currentTarget.dataset.appname;
+      var temp = 'favoriteList[' + num +']'
+      this.setData({
+        [temp]:!this.data.favoriteList[num],
+      })
+      temp = 'changeFavorite';
+      this.setData({
+        [temp+'.uid']:wx.getStorageSync('userInfo').openId,
+      })
+      temp += '.app';
+      for(var i=1;this.data.favoriteList[i-1]!=null;i++){
+        this.setData({
+          [temp+i]:this.data.favoriteList[i-1],
+        })
+      }
+      const res=await request({url:"wxuserfavorite/change",data:this.data.changeFavorite});
+      
+    }
+    else{
+      return false;
+    }
+
   },
 })
