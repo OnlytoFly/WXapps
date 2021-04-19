@@ -1,4 +1,5 @@
 <!--pages/home/home.wxml-->
+<!--上方搜索框-->
 <view class="top">
   <view class="topsearch">
     <view class="frame">
@@ -7,6 +8,7 @@
     <text class="searchtext">搜索</text>
   </view>
 </view>
+<!--应用列表显示-->
 <view class="first_tab">
   <navigator class="apps"
     wx:for="{{showList}}"
@@ -24,8 +26,20 @@
       </view>
       <view class="app_favorite">
         <view class="app_favoritepicture">
-          <image mode="widthFix" catchtap="disloveit" data-appnum="{{item.inappsNum}}" data-shownum="{{index}}" wx:if="{{item.islove}}" src="../../icon/veryFavorite.png"></image>
-          <image mode="widthFix" catchtap="disloveit" data-appnum="{{item.inappsNum}}" data-shownum="{{index}}" wx:else  src="../../icon/.favorite.png"></image>
+          <image 
+            mode="widthFix" 
+            catchtap="disloveit" 
+            data-appnum="{{item.inappsNum}}" 
+            data-shownum="{{index}}" 
+            wx:if="{{item.islove}}" 
+            src="../../icon/veryFavorite.png"></image>
+          <image 
+            mode="widthFix" 
+            catchtap="disloveit" 
+            data-appnum="{{item.inappsNum}}" 
+            data-shownum="{{index}}" 
+            wx:else  
+            src="../../icon/.favorite.png"></image>
         </view>
         <view class="app_favoritenum">{{item.favoritenum}}</view>
       </view>
