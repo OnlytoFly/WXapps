@@ -163,7 +163,7 @@ Page({
     else{
       //循环搜索，如果名字符合条件则加入显示列表
       for(var i=0,m=0;this.data.appsList[i];i++){
-        if (this.data.appsList[i].appName.indexOf(value) >= 0){
+        if (this.data.appsList[i].showname.indexOf(value) >= 0){
           var temp = 'showList[' + m +']';
           m++;
           this.setData({
