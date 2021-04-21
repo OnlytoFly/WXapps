@@ -97,13 +97,14 @@ Page({
 
     //先判断是否登录
     if(this.islogin()){
-      var num=e.currentTarget.dataset.appnum;
       //拿到app编号，修改wx缓存数据
-      var temp = 'appsList[' + num +'].islove'
+      var num=e.currentTarget.dataset.shownum;
+      var temp = 'showList['+num+'].islove';
       this.setData({
-        [temp]:!this.data.appsList[num].islove,
+        [temp]:!this.data.showList[num].islove,
       })
       //用来发给数据库服务器的包体 changeFavorite
+      num=e.currentTarget.dataset.appnum;
       temp = 'changeFavorite';
       this.setData({
         [temp+'.uid']:wx.getStorageSync('userInfo').openId,
@@ -118,22 +119,21 @@ Page({
       const res=await request({url:"wxuserfavorite/change",data:this.data.changeFavorite});
 
       //修改自wx内部缓存数据，减少与数据库的交互
-      temp = 'appsList['+num+'].favoritenum'
-      //console.log(temp);
-      //console.log(this.data);
-      if(this.data.appsList[num].islove){
+      num=e.currentTarget.dataset.shownum
+      temp = 'showList['+num+'].favoritenum'
+      if(this.data.showList[num].islove){
         this.setData({
-          [temp]:this.data.appsList[num].favoritenum+1
+          [temp]:this.data.showList[num].favoritenum+1
         })
       }
       else{
         this.setData({
-          [temp]:this.data.appsList[num].favoritenum-1
+          [temp]:this.data.showList[num].favoritenum-1
         })
       }
-      
+      //console.log(this.data.appsList)
       //更新显示列表
-      this.updateShowList();
+      //this.updateShowList();
     }
     else{
       return false;
