@@ -48,19 +48,24 @@ image{
   flex: 3;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-around;  
+  font-size:25rpx;
+  font-family: KaiTi;
 } 
 .app_name{
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  font-size: 35rpx;
+  font-family: Micsoft Yahei;
 }
 .app_introduction{
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  
 }
 .app_favorite{
   display: flex;
