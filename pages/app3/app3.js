@@ -61,11 +61,16 @@ Page({
       }
     })
   */
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/app3/api3b?index='+that.data.index+'&height='+that.data.height+'&weight='+that.data.weight,
     })
   },
-  
+  onUnload: function () {
+    wx.navigateTo({
+      url: '../home/home',
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载

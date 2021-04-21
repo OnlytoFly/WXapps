@@ -6,6 +6,7 @@
 } */
 page{
   background-image: url("https://i.loli.net/2021/04/18/XNIthV3aiCpGDEw.png");
+  width: 100%;
   }
 
 .Name_food{
@@ -26,12 +27,14 @@ page{
     width: 150rpx;
     height: 150rpx;
     float: right;
+    margin-top: 20px;
 }
 
   .show-btn {
     width: 150rpx;
     height: 150rpx;
     float: left;
+    margin-top: 20px;
 }
 
 .modal-mask {
@@ -146,4 +149,8 @@ input-holder {
 }
 .ingredient{
   font-weight: 1000;
+}
+.im{
+  width: 100%;
+ /*  height: 110%; */
 }

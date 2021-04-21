@@ -199,14 +199,16 @@ Page({
             self.setData({
               showModal:true,
               showmodal360:false,
-              showmodalsougo:false
+              showmodalsougo:false,
+              showmodalbaidu:false
             })
             return false
           }
             self.setData({
               searchresult_360:res.data.newslist,
               showmodal360:true,
-              showmodalsougo:false
+              showmodalsougo:false,
+              showmodalbaidu:false
             })}
       })
     }
@@ -223,14 +225,16 @@ Page({
             self.setData({
               showModal:true,
               showmodal360:false,
-              showmodalsougo:false
+              showmodalsougo:false,
+              showmodalbaidu:false
             })
             return false
           }
             self.setData({
               searchresult_sougo:res.data.newslist,
               showmodalsougo:true,
-              showmodal360:false
+              showmodal360:false,
+              showmodalbaidu:false
             })}
       })
     }

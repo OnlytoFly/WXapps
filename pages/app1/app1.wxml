@@ -2,11 +2,11 @@
 <!-- <view>菜谱烹饪</view> -->
 <!-- <image mode="widthFix" src="https://i.loli.net/2021/04/15/yQq1L9grUvKcPJD.png"></image> -->
 <swiper autoplay>
-    <swiper-item> <image  mode="widthFix" src="https://i.loli.net/2021/04/15/yQq1L9grUvKcPJD.png"/></swiper-item>
-    <swiper-item> <image  mode="widthFix" src="https://i.loli.net/2021/04/15/rj2RZemhlOHBPs8.png"/></swiper-item>
-    <swiper-item> <image  mode="widthFix" src="https://i.loli.net/2021/04/15/zdypqgZXSYT3OKR.png"/></swiper-item>
-    <swiper-item> <image  mode="widthFix" src="https://i.loli.net/2021/04/15/JXxhMqbAgjn8sTL.png"/></swiper-item>
-    <swiper-item> <image  mode="widthFix" src="https://i.loli.net/2021/04/15/mQ1MPZpsEkgeHt3.png"/></swiper-item>
+    <swiper-item> <image class="im" mode="widthFix" src="https://i.loli.net/2021/04/15/yQq1L9grUvKcPJD.png"/></swiper-item>
+    <swiper-item> <image class="im" mode="widthFix" src="https://i.loli.net/2021/04/15/rj2RZemhlOHBPs8.png"/></swiper-item>
+    <swiper-item> <image class="im" mode="widthFix" src="https://i.loli.net/2021/04/15/zdypqgZXSYT3OKR.png"/></swiper-item>
+    <swiper-item> <image class="im" mode="widthFix" src="https://i.loli.net/2021/04/15/JXxhMqbAgjn8sTL.png"/></swiper-item>
+    <swiper-item> <image class="im" mode="widthFix" src="https://i.loli.net/2021/04/15/mQ1MPZpsEkgeHt3.png"/></swiper-item>
 </swiper>
 <view class="temperary">
     <view class="Name_food">

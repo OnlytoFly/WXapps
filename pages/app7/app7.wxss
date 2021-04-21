@@ -2,10 +2,14 @@
 page{
   background-image: url("https://i.loli.net/2021/04/18/aL7GSWzOUQ4ieKl.png");
   }
-.Virgo-btn{
+.title_big{
+  width: 100%;
+}
+
+  .Virgo-btn{
     width: 200rpx;
     height: 200rpx;
-    margin-left: 30px;
+    margin-left: 40px;
     /* float: left;
     margin-left: 20px;
     margin-top: 20px; */
@@ -20,13 +24,13 @@ page{
 .Pisces-btn{
   width: 200rpx;
   height: 200rpx;
-  margin-right: 20;
+  margin-right: 20px;
   /* margin-left: 120px;
   margin-top: 20px; */
 }
 
 .instruction{
-  margin-left: 40px;
+  margin-left: 55px;
   font-weight: bold;
   font-family: fantasy;
   color: white;
@@ -35,7 +39,7 @@ page{
 .Cancer-btn{
   width: 200rpx;
     height: 200rpx;
-    margin-left: 30px;
+    margin-left: 40px;
 }
 
 .Aries-btn{

@@ -84,7 +84,7 @@ Page({
     showModal: false,
     showmodal:false
     })
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/app3/app3',
     })
    },

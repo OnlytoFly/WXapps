@@ -1,1 +1,58 @@
-/* pages/app12/app12.wxss */
+/* pages/api3/api3.wxss */
+page{
+  display: flex;
+  flex-direction: column;
+   height:100%; 
+  min-height:100%;
+/*   height: 200rpx; */
+/*   background: #00ffb396; */
+/*   color:#db5e8e; */
+color:black;
+
+ 
+  font-family:"Microsoft YaHei";
+  font-size:16px;
+  background-image: url("https://z3.ax1x.com/2021/04/21/cb5c6O.jpg");
+  background-size: 100% 100%;
+}
+/* .container{
+  background-image: url("https://imgtu.com/i/c7cDnx");
+} */
+.search01{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 110%;
+}
+
+.search02{
+  background:rgba(255, 255, 224, 0.767); 
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+ height: 1600rpx;
+ width: 580rpx;
+}
+.write{
+  width: 24%;
+  height: 30%;
+}
+.jinri{
+  font-size:45rpx ;
+}
+.riqi{
+  display: flex;
+  flex-flow: column;
+}
+.kai{
+  font-family: KaiTi;
+  font-size: 40rpx;
+}
+
+.pic{
+  display:flex;
+  flex-flow: row;
+}

@@ -1,5 +1,5 @@
 <!--pages/stella/stella.wxml-->
-<image mode="widthFix" src="../icon/stella.png"></image>
+<image class="title_big" mode="widthFix" src="../icon/stella.png"></image>
 
 
 <view class="temperary">

@@ -1,18 +1,20 @@
-// pages/app12/app12.js
+// pages/api1/api1.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    dreamCode:'',
+    dreamResult:[],
+    diary:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      self=this
   },
 
   /**
@@ -62,5 +64,25 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  test:function(){
+    wx.request({
+      url: 'http://api.tianapi.com/txapi/tiangou/index', 
+      method:'GET',
+      data:{
+        key:'e14365791172cb3feac0c7ec2b4ed403',
+      },
+      success: function (res) {
+        console.log(res.data)
+        self.setData({
+          dreamCode:res.data.code,
+          dreamResult:res.data.newslist
+        })
+       
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    })
   }
 })

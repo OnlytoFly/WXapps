@@ -132,7 +132,7 @@ this.setData(data);
 
   test:function(){
     var that=this;
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/app4/api4b?dates='+that.data.dates,
     })
   },

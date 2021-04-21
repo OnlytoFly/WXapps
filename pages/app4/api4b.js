@@ -86,7 +86,7 @@ Page({
   },
   test:function(){
     
-    wx.navigateTo({
+    wx.redirectTo({
       url: '/pages/app4/app4',
     })
   },

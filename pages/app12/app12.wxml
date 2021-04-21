@@ -1,2 +1,45 @@
-<!--pages/app12/app12.wxml-->
-<text>pages/app12/app12.wxml</text>
+<!--pages/api1/api1.wxml-->
+<!-- <text>pages/api1/api1.wxml</text> -->
+<view class="container">
+  
+  <!--  <image src='../image/1.jpg'></image> -->
+ 
+ 
+ 
+ 
+  <view class="search01">
+   <!--  <button class="button" plain  bindtap="test" >开始写日记！</button> -->
+
+   <image class="write" src='https://i.postimg.cc/mgpJpbkp/image.png' bindtap="test"></image>
+ <!--   <image class="dog" src="https://i.postimg.cc/ZndZLWJS/image.png" bindtap="test"></image>  -->
+ 
+    <view class="search02">
+      <view wx:for="{{dreamResult}}" >
+<view class="riqi">
+  <text class="jinri">今日日记本：</text>
+  <text class="kai">2021年4月22日</text>
+  <text class="kai">星期四</text>
+  <text class="kai">阴</text>
+</view>
+<view class="kai">{{dreamResult[0].content}}</view>
+<image class="dog" src="https://i.postimg.cc/ZndZLWJS/image.png" bindtap="test"></image> 
+</view>
+
+
+
+
+
+<!--      <view class="search03">
+
+ </view>
+ <button plain style="  color: #db5e8e;  border-color: #db5e8e;" class="buttons" type="primary" bindtap="test" >计算BMI</button>
+  -->
+</view>
+ </view>
+ </view>
+ 
+
+
+
+
+

@@ -26,6 +26,9 @@
 <view wx:if="{{showmodalsougo}}" style="white-space:pre-wrap">搜狗 收录量:{{searchresult_sougo[0].count}}
 查询时间:{{searchresult_sougo[0].time}}</view>
 
+<view wx:if="{{showmodalbaidu}}" style="white-space:pre-wrap">百度 收录量:{{searchresult_baidu[0].count}}
+查询时间:{{searchresult_baidu[0].time}}</view>
+
 <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
  
 <view class="modalDlg" wx:if="{{showModal}}"> 
