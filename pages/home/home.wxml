@@ -12,14 +12,14 @@
 <view class="first_tab">
   <navigator class="apps"
     wx:for="{{showList}}"
-    wx:key="appName"
+    wx:key="appId"
     >
     <view class="app_picture">
       <image mode="widthFix" src="{{item.picture}}"></image>
     </view>
     <view class="apps_introduction">
       <view class="app_name">
-        {{item.appName}}
+        {{item.showname}}
       </view>
       <view class="app_intorduction">
         {{item.introduction}}

@@ -78,7 +78,7 @@ Page({
       hasNextPage:res.data.dataZone.pageInfo.hasNextPage,
     })
     this.initShowList();
-    //console.log(res);
+    console.log(res);
     //console.log(this.QueryParams);
   },
   //判断登录状态

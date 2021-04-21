@@ -22,7 +22,7 @@
 <view class="favorite_apps">
   <navigator class="apps"
     wx:for="{{appsList}}"
-    wx:key="appName"
+    wx:key="appId"
     wx:if="{{item.islove}}"
     bindlongpress="changeMode" >
     <image class="app_picture" src="{{item.picture}}"></image>
@@ -31,6 +31,6 @@
       src="../../icon/favorite.png" 
       catchtap="disloveit" 
       data-appname="{{index}}"></image>
-    <view class="app_name">{{item.appName}}</view>
+    <view class="app_name">{{item.showname}}</view>
   </navigator>
 </view>
