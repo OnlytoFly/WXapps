@@ -56,11 +56,14 @@
 .apps{
 
   width: 32%;
-  background: red;
-  border: 1rpx solid black; 
+  background: rgba(0, 255, 221, 0.171);
+  /* border: 1rpx solid black;  */
   text-align: center;
   position: relative;
-
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .app_picture{
 
@@ -88,4 +91,8 @@
   height: 25%;
   z-index: 2;
 
+}
+.myList{
+  font-family: KaiTi;
+  font-size: large;
 }

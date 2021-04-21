@@ -14,7 +14,7 @@
   </view>
 </view>
 
-<view>我的收藏列表</view>
+<view class="myList">我的收藏列表</view>
 
 <!--删除模式时显示的遮罩层-->
 <view class="shade" wx:if="{{isMoveout}}" catchtap="changeMode"></view>
@@ -28,7 +28,7 @@
     <image class="app_picture" src="{{item.picture}}"></image>
     <image class="favorite_moveout" 
       wx:if="{{isMoveout}}" 
-      src="../../icon/favorite.png" 
+      src="../../icon/delete.png" 
       catchtap="disloveit" 
       data-appname="{{index}}"></image>
     <view class="app_name">{{item.showname}}</view>
