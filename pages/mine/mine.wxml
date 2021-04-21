@@ -24,6 +24,8 @@
     wx:for="{{appsList}}"
     wx:key="appId"
     wx:if="{{item.islove}}"
+    catchtap="navigateToApps" 
+    data-appnum="{{item.inappsNum}}"
     bindlongpress="changeMode" >
     <image class="app_picture" src="{{item.picture}}"></image>
     <image class="favorite_moveout" 

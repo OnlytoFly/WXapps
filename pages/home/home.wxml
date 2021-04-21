@@ -10,9 +10,11 @@
 </view>
 <!--应用列表显示-->
 <view class="first_tab">
-  <navigator class="apps"
+  <view class="apps"
     wx:for="{{showList}}"
     wx:key="appId"
+    catchtap="navigateToApps" 
+    data-appnum="{{item.inappsNum}}"
     >
     <view class="app_picture">
       <image mode="widthFix" src="{{item.picture}}"></image>
@@ -45,7 +47,7 @@
       </view>
     </view>
 
-  </navigator>
+  </view>
 
 </view>
 

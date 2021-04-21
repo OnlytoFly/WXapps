@@ -187,5 +187,11 @@ Page({
       })
     }
   },
+  navigateToApps(e){
+    var num=e.currentTarget.dataset.appnum+1;
+    wx.navigateTo({
+      url: '../app'+num+'/app'+num,
+    })
+  }
 
 })
