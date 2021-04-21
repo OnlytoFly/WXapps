@@ -2,7 +2,7 @@
 <!--头像和背景展示-->
 <view class="user_info_wrap">
   <view class="user_img_wrap">
-    <image class="user_bg" wx:if="{{userinfo.openId}}" src="{{userinfo.avatarUrl}}"></image>
+    <image class="user_bg" wx:if="{{userinfo.openId}}" src="{{userinfo.avatarUrl}}" mode="scaleToFill"></image>
     <image class="user_bg" wx:else src="../../icon/nokey.png"></image>
     <view class="user_info">
       <image class="user_icon" wx:if="{{userinfo.openId}}" src="{{userinfo.avatarUrl}}"></image>
