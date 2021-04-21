@@ -1,0 +1,91 @@
+<!--pages/api5/api5.wxml-->
+<!--pages/api2/api2.wxml-->
+<!-- <text>pages/api2/api2.wxml</text> -->
+<view class="content">
+   <!--  <image class="main-bg" src="../../icon/MBE风格常用图标-天气.png"></image> -->
+    <view>
+    <!-- <view class="city">{{dreamResult[0].area}}</view> -->
+<!--     <input class="input" placeholder="要查询的城市名"/>
+    <button></button> -->
+  </view>
+<!--导航条-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+ 
+<!--1-->
+<view class="tabs" hidden="{{currentTab!==0}}">
+  <view class="search02">
+    <view>
+    <view>中 草 药：</view>
+ <input class="inserta" style="border: 1px solid;border-color: black;width:80%;"
+ placeholder="请输入中草药的名称" maxlength="16" type="text" focus="false" bindinput="valueInputFirst"/>
+</view>
+<view>
+<button plain style=" font-size: 25px; color:#205706e3;  border:0px;" class="buttons" type="primary" bindtap="test1" >查询中草药</button>
+</view>
+
+
+
+
+</view>
+</view>
+
+
+
+
+
+ 
+<view class="tabs1" hidden="{{currentTab!==1}}">
+
+    <view class="search02a">
+    
+      <view class="sba">
+ 药 物：<input class="inserta" style="border: 1px solid;border-color: black;width:80%;"
+ placeholder="请输入要查询的药物名称"  maxlength="16" type="text" focus="false" bindinput="valueInputSecond"/>
+</view>
+
+<view>
+<button plain style=" font-size:25px; color: #09449ce3;  border-color:#09449ce3; " class="buttons" type="primary" bindtap="test2" >药物说明书查询</button>
+</view>
+
+
+
+</view>
+</view>
+
+<block>   
+<scroll-view class="modal-dialog" scroll-y='true' wx:for="{{dreamResult}}">
+  <text>名称：</text>
+  <view class="sbaaaa">
+    {{dreamResult[0].title}}
+  </view>
+<!--   <text>
+    {{dreamResult[0].content}}
+  </text> -->
+  <text  >
+    {{contents1}}
+  </text>
+  <button class="go" bindtap="go" >返回</button>
+  </scroll-view>
+</block>
+
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class="error"></view>
+ <text>呜呜呜，没有查到这个药</text>
+ <button class="go" bindtap="go" >返回</button>
+</view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+

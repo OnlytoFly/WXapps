@@ -1,0 +1,29 @@
+<!--pages/poem/poem.wxml-->
+
+<image class="title_poem" mode="widthFix" src="../icon/poem.png"></image>
+<!-- 弹出框以及api端口函数 -->
+<!-- <view class="modal-input-author">
+       <input placeholder-class="input-holder" type="text"  bindinput="inputChange_author" class="input" placeholder="在这里输入作者喵"></input>
+    </view> -->
+    <view class="modal-input-title">
+       <input placeholder-class="input-holder" type="text"  bindinput="inputChange_title" class="input" placeholder="在这里输入标题喵,支持模糊搜索哦"></input>
+    </view>
+<view class="temperary">
+  <image class="pen-btn" bindtap="showDialogBtn_poem" src="../icon/pen.png"></image>
+</view>
+
+
+<view class="modal-mask" bindtap="hidepopup" catchtouchmove="preventTouchMove"  wx:if="{{showModal}}"></view>
+<block>   
+  <scroll-view class="modal-dialog" scroll-y='true' wx:if="{{showModal}}">
+      <image bindtap='hidepopup' class="guanbi"  src='../icon/close.png' mode="widthFix,heightFix"></image>
+      <view class="t-title">诗风词骨</view>
+      <view class="outputBox"  wx:for="{{poemResult}}" wx:for-index="id" wx:for-item="item" >
+          <view  style="white-space:pre-line"><view class="Name">题目：</view>{{poemResult[id].title}}</view>
+          <view  style="white-space:pre-line"><view class="special">作者：</view>{{poemResult[id].author}}</view> 
+          <view  style="white-space:pre-line"><view class="conTent">内容：</view>{{poemResult[id].content}}</view>
+          <view>--------------------------------------</view>
+      </view>
+    <view class="b-title">抬头看吧，看那满天的繁星</view>
+  </scroll-view>
+</block>

@@ -1,0 +1,36 @@
+<!--pages/api3/api3.wxml-->
+<!-- <text>pages/api3/api3.wxml</text> -->
+<view class="container">
+  
+ <!--  <image src='../image/1.jpg'></image> -->
+
+
+
+
+ <view class="search01">
+   <view class="search02">
+    <view class="search03">
+  <view>
+ <view>身 高：</view>
+ <input class="inserta" style="border: 1px solid;border-color: black;width:80%;"
+ placeholder="请输入您的身高（cm）" maxlength="16" type="text" focus="false" bindinput="valueInputFirst"/>
+</view>
+<view >
+ 体 重：<input class="inserta" style="border: 1px solid;border-color: black;width:80%;"
+ placeholder="请输入您的体重（kg）"  maxlength="16" type="text" focus="false" bindinput="valueInputSecond"/>
+</view>
+<view>
+ 性 别：<!-- <input style="border: 1px solid;border-color: black;width:80%;"
+ placeholder="请输入您的性别（男/女）" /> -->
+
+ <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" >
+        <view class="picker"  >
+        <!--  选 择： --><view class="inserta" style="border: 1px solid;border-color: black">{{array[index]}}</view>
+        </view>
+      </picker>
+</view>
+</view>
+<button plain style="  color: #db5e8e;  border-color: #db5e8e;" class="buttons" type="primary" bindtap="test" >计算BMI</button>
+</view>
+</view>
+</view>

@@ -1,0 +1,46 @@
+<!--pages/api3/api3b.wxml-->
+<!-- <text>pages/api3/api3b.wxml</text> -->
+<!--pages/api3/api3.wxml-->
+<!-- <text>pages/api3/api3.wxml</text> -->
+<view class="container">
+  
+  <!--  <image src='../image/1.jpg'></image> -->
+ 
+ 
+ 
+ 
+  <view class="search01">
+    <view class="search02">
+      <view wx:for="{{dreamResult}}" >
+  <text>您的BMI指数为：</text>
+ <!--  <text class="bmio">BMI=体重÷身高2。（体重单位：千克；身高单位：米。）</text> -->
+  
+<view class="important">{{dreamResult[0].bmi}}</view>
+<text>您当前的健康风险为：</text>
+<view class="important">{{dreamResult[0].healthy}}</view>
+<text>您的理想体重应为：</text>
+<view class="unimp">{{dreamResult[0].idealweight}}kg</view>
+<text>您的合理BMI指数区间为：</text>
+<view class="unimp">{{dreamResult[0].normbmi}}</view>
+<view class="tipss">
+<text class="tips">建议书：</text>
+<view>{{dreamResult[0].tip}}</view>
+</view>
+<button plain style="  color: #db5e8e;  border-color: #db5e8e;"  class="go" bindtap="go" >返回</button>
+</view>
+<view class="modalDlg" wx:if="{{showModal}}"> 
+ <view class="error"></view>
+ <text>您的输入有误哦，请返回重来</text>
+ <button class="go" bindtap="go" >返回</button>
+</view>
+ <!-- <button plain style="  color: #db5e8e;  border-color: #db5e8e;" class="buttons" type="primary" bindtap="test" >计算BMI</button> -->
+ </view>
+ </view>
+ <view class="bmia">
+  <text>BMI=体重÷身高2。（体重单位：千克；身高单位：米。）</text>
+</view>
+
+
+
+ </view>
+ 

@@ -1,0 +1,27 @@
+<!--pages/quiz/quiz.wxml-->
+<view class="name"></view>
+
+<image src="https://z3.ax1x.com/2021/04/19/cohe76.png" class="title"></image>
+
+<view wx:if="{{showmodal_title}}">题目：{{decideresult[0].title}}</view>
+<radio-group id="radio" bindchange="radioChange" wx:if="{{showmodal_decide}}">
+  <radio value="1" checked="true">对</radio>
+  <radio value="0">错</radio>
+</radio-group>
+
+<button type="primary" bindtap="test" wx:if="{{showmodal_start}}">开始答题</button>
+<button type="primary" bindtap="continue" wx:if="{{showmodal_continue}}">继续</button>
+<button type="primary" bindtap="test" wx:if="{{showmodal_next}}">下一题</button>
+<button type="primary" bindtap="endquiz" wx:if="{{showmodal_end}}">结束</button>
+
+<view wx:if="{{showmodal_analyse}}">{{decideresult[0].analyse}}</view>
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+ 
+<view class="modalDlg" wx:if="{{showModal}}">
+ <text>本次问答结束</text>
+ <text>您本次共答题{{num}}道，答对{{num_right}}题，得分{{score}}分,历史最高分{{score_history}}分</text>
+ <button class="go" bindtap="go" >返回</button>
+</view>
+ 
+ <view wx:if="{{showmodal_tip}}">本页面为趣味问答小游戏，答对一题得10分，答错不得分，每次在选择你的答案后可以点击继续来查看答案</view>

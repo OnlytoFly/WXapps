@@ -1,0 +1,149 @@
+/* .temperary{
+    .Name_food{
+      padding-left:350rpx; 
+    }
+
+} */
+page{
+  background-image: url("https://i.loli.net/2021/04/18/XNIthV3aiCpGDEw.png");
+  }
+
+.Name_food{
+   padding-left:5rpx;  
+  /*  width: 35%; */ 
+   margin-left: 50px;
+   margin-right: 50px;
+}
+
+/*  .out_food{
+  padding-left:200rpx;
+   width: 35%;  
+  margin-right:20px;
+  float: right; 
+} */
+
+ .out-btn{
+    width: 150rpx;
+    height: 150rpx;
+    float: right;
+}
+
+  .show-btn {
+    width: 150rpx;
+    height: 150rpx;
+    float: left;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -180rpx 105rpx;
+  border-radius: 36rpx;
+}
+
+.modal-title {
+  padding-top: 50rpx;
+  font-size: 36rpx;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 50rpx 32rpx;
+}
+
+.modal-input {
+  display: flex;
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}
+
+
+.input {
+  width: 100%;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+
+.btn-confirm {
+  width: 50%;
+  color: #ec5300;
+  text-align: center;
+}
+
+.outputBox {
+  box-sizing: border-box;
+  border-style: groove;
+  border-color: cornflowerblue;
+  margin:20px;
+  margin-top: 80px;
+  margin-bottom: 20px;
+  font: icon;
+  background-color: lemonchiffon;
+}
+.catalog{
+  font-weight: 1000;
+}
+.Name{
+  font-weight: 1000;
+}
+.craft{
+  font-weight: 1000;
+}
+.special{
+  font-weight: 1000;
+}
+.hint{
+  font-weight: 1000;
+}
+.help{
+  font-weight: 1000;
+}
+.ingredient{
+  font-weight: 1000;
+}

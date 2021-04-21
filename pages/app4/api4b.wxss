@@ -1,0 +1,78 @@
+/* pages/api4/api4b.wxss */
+/* pages/api4/api4.wxss */
+page{
+  display: flex;
+  flex-direction: column;
+   height:100%; 
+  min-height:100%;
+/*   height: 200rpx; */
+/*   background: #00ffb396; */
+/*   color:#db5e8e; */
+color:black;
+
+ 
+  font-family:"Microsoft YaHei";
+  font-size:20px;
+  background-image: url("https://z3.ax1x.com/2021/04/21/cHhOSO.jpg");
+}
+/* .container{
+  background-image: url("https://imgtu.com/i/c7cDnx");
+} */
+.search01{
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+/* .buttons{
+width: 100%;
+margin-right: 20rpx;
+height: 60rpx;
+line-height: 60rpx; 
+background: rgba(38, 88, 180, 0.26);
+color:#d21e1e;
+padding-right:0rpx; 
+
+} */
+.search02{
+/*   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; */
+  background:#147b8dab; 
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+/*   overflow: hidden; 
+  text-overflow: ellipsis; 
+  display: -webkit-box;  
+  -webkit-line-clamp: 14;
+  -webkit-box-orient: vertical;
+   */
+   overflow: hidden;
+  position: fixed;
+  height: 1200rpx;
+  width: 90%;
+  z-index: 2;
+/*   height: 1500rpx; 
+ width: 650rpx;   */
+}
+.today{
+  font-size: 35px;
+  font-family: KaiTi;
+  color: rgb(7, 35, 77);
+}
+.buttons{
+  /*   width: 1500%;
+    margin-top: 30rpx; */
+    background-color: #3b31086b;
+    color:#fff;
+    border: 1px solid;
+    font-family: KaiTi;
+    font-size: 21px;
+  }
+

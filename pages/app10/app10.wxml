@@ -1,0 +1,36 @@
+<!--pages/domain/domain.wxml-->
+<view class="testview"></view>
+
+<swiper autoplay interval="5000" circular="true" indicator-dots="true" current="{{current}}">
+<swiper-item><image mode="widthFix" src="https://z3.ax1x.com/2021/04/20/c70yWt.png"></image></swiper-item>
+<swiper-item><image mode="widthFix" src="https://z3.ax1x.com/2021/04/20/c708iR.png"></image></swiper-item>
+<swiper-item><image mode="widthFix" src="https://z3.ax1x.com/2021/04/20/c7w9E9.png"></image></swiper-item>
+</swiper>
+
+<view class="domain">
+  <input bindinput='domain' value="{{i_domain}}" placeholder='请输入域名' class="input"></input>
+</view>
+
+<radio-group bindchange="radioChange">
+  <radio value="1" checked="true">360搜索</radio>
+  <radio value="2">搜狗</radio>
+  <radio value="3">百度</radio>
+  <radio value="0">显示以上三个搜索引擎收录量</radio>
+</radio-group>
+
+<button type="primary" bindtap="test">点击查询</button>
+
+<view wx:if="{{showmodal360}}" style="white-space:pre-wrap">360搜索 收录量:{{searchresult_360[0].count}}
+查询时间:{{searchresult_360[0].time}}</view>
+
+<view wx:if="{{showmodalsougo}}" style="white-space:pre-wrap">搜狗 收录量:{{searchresult_sougo[0].count}}
+查询时间:{{searchresult_sougo[0].time}}</view>
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+ 
+<view class="modalDlg" wx:if="{{showModal}}"> 
+ <view class="error"></view>
+ <text>无查询结果，可能域名输入错误或服务器出错，请重试</text>
+ <button class="go" bindtap="go" >返回</button>
+</view>
+

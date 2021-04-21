@@ -1,0 +1,46 @@
+/* pages/cangtou/cangtou.wxss */
+page{
+  background-image: url("https://z3.ax1x.com/2021/04/20/c7AFNq.png");
+  background-size: 100% 100%;
+}
+.error{
+  background-image: url(https://z3.ax1x.com/2021/04/20/cHiKwn.png);
+  width: 150px;
+  height: 150px;
+  background-size: 100% 100%;
+}
+.modalDlg{
+  width: 580rpx;
+  height: 580rpx;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  margin: -370rpx 85rpx;
+  background-color: #fff;
+  border-radius: 36rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+.go{
+  position: relative;
+}
+.input{
+  background-color: #fff;
+  border:1px solid rgba(250, 252, 249, 0.993);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.word{
+text-align: left;
+width: 100%;
+height: 120rpx;
+ }
+ .title{
+  background-image: url("https://z3.ax1x.com/2021/04/20/c7jsSA.png");
+  width: 1350rpx;
+  height: 150rpx;
+  background-size: 100% 100%;
+ }

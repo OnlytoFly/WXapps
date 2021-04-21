@@ -1,0 +1,20 @@
+<!--pages/api4/api4b.wxml-->
+
+<view class="container">
+  
+  <!--  <image src='../image/1.jpg'></image> -->
+  <view class="search01">
+    
+    <scroll-view class="search02" scroll-y='true'>
+      <view class="today">历史上的“今天”</view>
+<block wx:for="{{dreamResult}}" data-item="item" wx:for-index="idx" >
+  <view>
+    {{idx+1}}.{{item.lsdate}},{{item.title}}
+  </view>
+</block>
+
+
+<button  class="buttons"  bindtap="test" >返回</button>
+ </scroll-view>
+</view>
+ </view>

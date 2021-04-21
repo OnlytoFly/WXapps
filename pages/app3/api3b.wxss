@@ -1,0 +1,111 @@
+/* pages/api3/api3b.wxss */
+/* pages/api3/api3.wxss */
+page{
+  display: flex;
+  flex-direction: column;
+   height:100%; 
+  min-height:100%;
+/*   height: 200rpx; */
+/*   background: #00ffb396; */
+/*   color:#db5e8e; */
+color:black;
+
+ 
+  font-family:"Microsoft YaHei";
+  font-size:20px;
+  background-image: url("https://z3.ax1x.com/2021/04/20/cHuEEF.jpg");
+}
+/* .container{
+  background-image: url("https://imgtu.com/i/c7cDnx");
+} */
+.search01{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+/* .buttons{
+width: 100%;
+margin-right: 20rpx;
+height: 60rpx;
+line-height: 60rpx; 
+background: rgba(38, 88, 180, 0.26);
+color:#d21e1e;
+padding-right:0rpx; 
+
+} */
+.search02{
+  background:#90c2c5b7; 
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 77%;
+  width:90%;
+/*  height: 1200rpx; */
+/*  width: 550rpx; */
+}
+
+.important{
+  font-family:"KaiTi";
+  font-size:35px;
+  color:rgb(255, 123, 0);
+}
+.unimp{
+  color:rgb(23, 109, 27);
+}
+.tipss{
+  background:#68ad8bc2; 
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+/*   height: 40%; */
+  width:100%;
+}
+.tips{
+
+  font-family:"KaiTi";
+  font-size:30px;
+  color:rgb(36, 85, 158);
+}
+
+.bmia{
+  background:#f4f5f5c2; 
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+/*   height: 40%; */
+  width:70%;
+  font-family:"KaiTi";
+  font-size:15px;
+  color:rgb(6, 17, 34);
+  /* justify-content:flex-end; */
+}
+.modalDlg{
+  width: 580rpx;
+  height: 480rpx;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  margin: -370rpx 85rpx;
+  background-color:white;
+  border-radius: 36rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: KaiTi;
+ }
+ .go{
+  position: relative;
+}
+.error{
+  background-image: url(https://z3.ax1x.com/2021/04/20/c7FLSU.png);
+  width: 150px;
+  height: 150px;
+  background-size: 100% 100%;
+}

@@ -1,17 +1,30 @@
 {
-  "pages":[
+  "pages": [
     "pages/home/home",
     "pages/mine/mine",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/app1/app1",
+    "pages/app2/app2",
+    "pages/app3/app3",
+    "pages/app4/app4",
+    "pages/app5/app5",
+    "pages/app6/app6",
+    "pages/app7/app7",
+    "pages/app8/app8",
+    "pages/app9/app9",
+    "pages/app10/app10",
+    "pages/app11/app11",
+    "pages/app3/api3b",
+    "pages/app4/api4b",
+    "pages/app12/app12"
   ],
-  "window":{
+  "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#55ddFF",
     "navigationBarTitleText": "解忧小铺",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
   },
-
   "tabBar": {
     "color": "black",
     "selectedColor": "#a9b7b7",

@@ -1,0 +1,20 @@
+<!--pages/translator/translator.wxml-->
+<!-- <Select prop-array='{{selectArray}}'></Select> -->
+<image mode="widthFix" src="https://i.loli.net/2021/04/17/GCvKWhFJrcto3gj.png"></image>
+<!-- <Select prop-array='{{selectArray}}' bind:myget='getDate'></Select> -->
+<view class="selectbox" >
+    <image mode="widthFix" src="https://i.loli.net/2021/04/17/gJw68aOqSIodbL9.png"></image>
+    <Select class="select" prop-array='{{selectArray}}' bind:myget='getDate'></Select>
+    <view class="modal-input">
+       <input placeholder-class="input-holder" type="text"  bindinput="inputChange" class="input" placeholder="在这里输入要翻译的东西喵"></input>
+    </view>
+    <view class="translting">
+        <view class="Name_translator">
+        <button class="show-btn" size="mini" bindtap="showDialogBtn">翻译</button>
+        </view>
+    </view>
+</view>
+
+<view class="outputBox" wx:for="{{allResult}}" wx:for-index="id" wx:for-item="item">
+   <view  style="white-space:pre-line"><view class="result">翻译结果</view>{{allResult[id].dst}}</view>
+</view>

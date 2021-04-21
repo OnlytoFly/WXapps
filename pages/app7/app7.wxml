@@ -1,0 +1,191 @@
+<!--pages/stella/stella.wxml-->
+<image mode="widthFix" src="../icon/stella.png"></image>
+
+
+<view class="temperary">
+    <view class="Name_stella_first">
+        <image class="Virgo-btn" bindtap="showDialogBtn_Virgo" src="../icon/Virgo.png"></image>
+        <image class="Aquarius-btn" bindtap="showDialogBtn_Aquarius" src="../icon/Aquarius.png"></image>
+        <image class="Pisces-btn" bindtap="showDialogBtn_Pisces" src="../icon/Pisces.png"></image>
+    </view>
+    <view>
+      <text class="instruction">处女座 </text>
+      <text class="instruction">水瓶座 </text>
+      <text class="instruction">双鱼座 </text>
+    </view>
+    <view class="Name_stella_second">
+        <image class="Cancer-btn" bindtap="showDialogBtn_Cancer" src="../icon/Cancer.png"></image>
+        <image class="Aries-btn" bindtap="showDialogBtn_Aries" src="../icon/Aries.png"></image>
+        <image class="Capricorn-btn" bindtap="showDialogBtn_Capricorn" src="../icon/Capricorn.png"></image>
+    </view>
+    <view>
+      <text class="instruction">巨蟹座 </text>
+      <text class="instruction">白羊座 </text>
+      <text class="instruction">摩羯座 </text>
+    </view>
+    <view class="Name_stella_third">
+        <image class="Sagittarius-btn" bindtap="showDialogBtn_Sagittarius" src="../icon/Sagittarius.png"></image>
+        <image class="Leo-btn" bindtap="showDialogBtn_Leo" src="../icon/Leo.png"></image>
+        <image class="Gemini-btn" bindtap="showDialogBtn_Gemini" src="../icon/Gemini.png"></image>
+    </view>
+    <view>
+      <text class="instruction">射手座 </text>
+      <text class="instruction">狮子座 </text>
+      <text class="instruction">双子座 </text>
+    </view>
+    <view class="Name_stella_fourth">
+        <image class="Libra-btn" bindtap="showDialogBtn_Libra" src="../icon/Libra.png"></image>
+        <image class="Scorpio-btn" bindtap="showDialogBtn_Scorpio" src="../icon/Scorpio.png"></image>
+        <image class="Taurus-btn" bindtap="showDialogBtn_Taurus" src="../icon/Taurus.png"></image>
+    </view>
+    <view>
+      <text class="instruction">天秤座 </text>
+      <text class="instruction">天蝎座 </text>
+      <text class="instruction">金牛座 </text>
+    </view>
+</view>
+
+<view class="modal-mask" bindtap="hidepopup" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<block>   
+<scroll-view class="modal-dialog" scroll-y='true' wx:if="{{showModal_Virgo}}">
+      <image bindtap='hidepopup' class="guanbi"  src='../icon/close.png' mode="widthFix,heightFix"></image>
+      <view class="t-title">处女座-Virgo</view>
+      <view class="outputBox"  wx:for="{{stellaResult}}" wx:for-index="id" wx:for-item="item" >
+        <view  class="Type" style="white-space:pre-line" >{{stellaResult[id].type}}：</view>        
+        <view  class="Content" style="white-space:pre-line" >{{stellaResult[id].content}}</view>
+      </view>
+    <view class="b-title">抬头看吧，看那满天的繁星</view>
+  </scroll-view>
+</block>
+
+<block>   
+<scroll-view class="modal-dialog" scroll-y='true' wx:if="{{showModal_Aquarius}}">
+      <image bindtap='hidepopup' class="guanbi"  src='../icon/close.png' mode="widthFix,heightFix"></image>
+      <view class="t-title">水瓶座-Aquarius</view>
+      <view class="outputBox"  wx:for="{{stellaResult}}" wx:for-index="id" wx:for-item="item" >
+        <view  class="Type" style="white-space:pre-line" >{{stellaResult[id].type}}：</view>        
+        <view  class="Content" style="white-space:pre-line" >{{stellaResult[id].content}}</view>
+      </view>
+    <view class="b-title">想要，传达给你的爱恋</view>
+  </scroll-view>
+</block>
+
+<block>   
+<scroll-view class="modal-dialog" scroll-y='true' wx:if="{{showModal_Pisces}}">
+      <image bindtap='hidepopup' class="guanbi"  src='../icon/close.png' mode="widthFix,heightFix"></image>
+      <view class="t-title">双鱼座-Pisces</view>
+      <view class="outputBox"  wx:for="{{stellaResult}}" wx:for-index="id" wx:for-item="item" >
+        <view  class="Type" style="white-space:pre-line" >{{stellaResult[id].type}}：</view>        
+        <view  class="Content" style="white-space:pre-line" >{{stellaResult[id].content}}</view>
+      </view>
+    <view class="b-title">El Psy Congroo</view>
+  </scroll-view>
+</block>
+
+<block>   
+<scroll-view class="modal-dialog" scroll-y='true' wx:if="{{showModal_Cancer}}">
+      <image bindtap='hidepopup' class="guanbi"  src='../icon/close.png' mode="widthFix,heightFix"></image>
+      <view class="t-title">巨蟹座-Cancer</view>
+      <view class="outputBox"  wx:for="{{stellaResult}}" wx:for-index="id" wx:for-item="item" >
+        <view  class="Type" style="white-space:pre-line" >{{stellaResult[id].type}}：</view>        
+        <view  class="Content" style="white-space:pre-line" >{{stellaResult[id].content}}</view>
+      </view>
+    <view class="b-title"> 走时心如止水 来时心怀暖阳</view>
+  </scroll-view>
+</block>
+
+<block>   
+<scroll-view class="modal-dialog" scroll-y='true' wx:if="{{showModal_Aries}}">
+      <image bindtap='hidepopup' class="guanbi"  src='../icon/close.png' mode="widthFix,heightFix"></image>
+      <view class="t-title">白羊座-Aries</view>
+      <view class="outputBox"  wx:for="{{stellaResult}}" wx:for-index="id" wx:for-item="item" >
+        <view  class="Type" style="white-space:pre-line" >{{stellaResult[id].type}}：</view>        
+        <view  class="Content" style="white-space:pre-line" >{{stellaResult[id].content}}</view>
+      </view>
+    <view class="b-title"> 漂泊的赤鸟寻回了可能性，再度化为青鸟</view>
+  </scroll-view>
+</block>
+
+<block>   
+<scroll-view class="modal-dialog" scroll-y='true' wx:if="{{showModal_Capricorn}}">
+      <image bindtap='hidepopup' class="guanbi"  src='../icon/close.png' mode="widthFix,heightFix"></image>
+      <view class="t-title">摩羯座-Capricorn</view>
+      <view class="outputBox"  wx:for="{{stellaResult}}" wx:for-index="id" wx:for-item="item" >
+        <view  class="Type" style="white-space:pre-line" >{{stellaResult[id].type}}：</view>        
+        <view  class="Content" style="white-space:pre-line" >{{stellaResult[id].content}}</view>
+      </view>
+    <view class="b-title"> 走时心如止水 来时心怀暖阳</view>
+  </scroll-view>
+</block>
+
+<block>   
+<scroll-view class="modal-dialog" scroll-y='true' wx:if="{{showModal_Sagittarius}}">
+      <image bindtap='hidepopup' class="guanbi"  src='../icon/close.png' mode="widthFix,heightFix"></image>
+      <view class="t-title">射手座-Sagittarius</view>
+      <view class="outputBox"  wx:for="{{stellaResult}}" wx:for-index="id" wx:for-item="item" >
+        <view  class="Type" style="white-space:pre-line" >{{stellaResult[id].type}}：</view>        
+        <view  class="Content" style="white-space:pre-line" >{{stellaResult[id].content}}</view>
+      </view>
+    <view class="b-title"> 平凡的天才展现才能，真正的天才让人忘记才能</view>
+  </scroll-view>
+</block>
+
+<block>   
+<scroll-view class="modal-dialog" scroll-y='true' wx:if="{{showModal_Leo}}">
+      <image bindtap='hidepopup' class="guanbi"  src='../icon/close.png' mode="widthFix,heightFix"></image>
+      <view class="t-title">狮子座-Leo</view>
+      <view class="outputBox"  wx:for="{{stellaResult}}" wx:for-index="id" wx:for-item="item" >
+        <view  class="Type" style="white-space:pre-line" >{{stellaResult[id].type}}：</view>        
+        <view  class="Content" style="white-space:pre-line" >{{stellaResult[id].content}}</view>
+      </view>
+    <view class="b-title"> 走时心如止水 来时心怀暖阳</view>
+  </scroll-view>
+</block>
+
+<block>   
+<scroll-view class="modal-dialog" scroll-y='true' wx:if="{{showModal_Gemini}}">
+      <image bindtap='hidepopup' class="guanbi"  src='../icon/close.png' mode="widthFix,heightFix"></image>
+      <view class="t-title">双子座-Gemini</view>
+      <view class="outputBox"  wx:for="{{stellaResult}}" wx:for-index="id" wx:for-item="item" >
+        <view  class="Type" style="white-space:pre-line" >{{stellaResult[id].type}}：</view>        
+        <view  class="Content" style="white-space:pre-line" >{{stellaResult[id].content}}</view>
+      </view>
+    <view class="b-title"> 走时心如止水 来时心怀暖阳</view>
+  </scroll-view>
+</block>
+
+<block>   
+<scroll-view class="modal-dialog" scroll-y='true' wx:if="{{showModal_Libra}}">
+      <image bindtap='hidepopup' class="guanbi"  src='../icon/close.png' mode="widthFix,heightFix"></image>
+      <view class="t-title">天秤座-Libra</view>
+      <view class="outputBox"  wx:for="{{stellaResult}}" wx:for-index="id" wx:for-item="item" >
+        <view  class="Type" style="white-space:pre-line" >{{stellaResult[id].type}}：</view>        
+        <view  class="Content" style="white-space:pre-line" >{{stellaResult[id].content}}</view>
+      </view>
+    <view class="b-title"> 走时心如止水 来时心怀暖阳</view>
+  </scroll-view>
+</block>
+
+<block>   
+<scroll-view class="modal-dialog" scroll-y='true' wx:if="{{showModal_Scorpio}}">
+      <image bindtap='hidepopup' class="guanbi"  src='../icon/close.png' mode="widthFix,heightFix"></image>
+      <view class="t-title">天蝎座-Scorpio</view>
+      <view class="outputBox"  wx:for="{{stellaResult}}" wx:for-index="id" wx:for-item="item" >
+        <view  class="Type" style="white-space:pre-line" >{{stellaResult[id].type}}：</view>        
+        <view  class="Content" style="white-space:pre-line" >{{stellaResult[id].content}}</view>
+      </view>
+    <view class="b-title"> 走时心如止水 来时心怀暖阳</view>
+  </scroll-view>
+</block>
+
+<block>   
+<scroll-view class="modal-dialog" scroll-y='true' wx:if="{{showModal_Taurus}}">
+      <image bindtap='hidepopup' class="guanbi"  src='../icon/close.png' mode="widthFix,heightFix"></image>
+      <view class="t-title">金牛座-Taurus</view>
+      <view class="outputBox"  wx:for="{{stellaResult}}" wx:for-index="id" wx:for-item="item" >
+        <view  class="Type" style="white-space:pre-line" >{{stellaResult[id].type}}：</view>        
+        <view  class="Content" style="white-space:pre-line" >{{stellaResult[id].content}}</view>
+      </view>
+    <view class="b-title"> 走时心如止水 来时心怀暖阳</view>
+  </scroll-view>
+</block>

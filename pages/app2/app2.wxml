@@ -1,0 +1,280 @@
+<!--pages/api2/api2.wxml-->
+<!-- <text>pages/api2/api2.wxml</text> -->
+<view class="content">
+    <image class="main-bg" src="../../icon/MBE风格常用图标-天气.png"></image>
+    <view>
+    <view class="city">{{dreamResult[0].area}}</view>
+<!--     <input class="input" placeholder="要查询的城市名"/>
+    <button></button> -->
+  </view>
+<!--导航条-->
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+ 
+<!--1-->
+<view class="tabs" hidden="{{currentTab!==0}}">
+  <view class="tabsBack"/>
+  <view class="imageWeather">
+  <view class="normalWeather">
+  <view>{{dreamResult[0].date}}</view>
+  <view>{{dreamResult[0].week}}</view>
+
+  <view class="okWeather1">{{dreamResult[0].weather}}</view>
+  <view class="okWeather2">
+    {{dreamResult[0].lowest}}
+    <text>-</text>
+    {{dreamResult[0].highest}}
+  </view>
+
+  <view>
+    <text class='realWeather'>平均气温：</text>
+    <view>{{dreamResult[0].real}}</view>
+  </view>
+</view>
+  <view class='weather_image'>
+  <image src="{{dreamResult[0].weatherimg}}" ></image>
+
+  
+  </view>
+</view>
+<view class="unNormalWeather">
+<view class="weather001">
+  <view>
+    <text>降水量（mm）：</text>
+    <view>{{dreamResult[0].pcpn}}</view>
+  </view>
+  <view>
+    <text>日出时间：</text>
+    <view>{{dreamResult[0].sunrise}}</view>
+  </view>
+  <view>
+    <text>日落时间：</text>
+    <view>{{dreamResult[0].sunset}}</view>
+  </view>
+</view>
+<view>
+  <view>{{dreamResult[0].wind}}</view>
+  <view>{{dreamResult[0].windsc}}</view>
+</view>
+</view>
+  <view class="tipso">
+    <text class="tipsa">温情提示：</text>
+    <view>{{dreamResult[0].tips}}</view>
+  </view>
+
+</view>
+ 
+<!--2-->
+<view class="tabs" hidden="{{currentTab!==1}}">
+  <view class="tabsBack"/>
+  <view class="imageWeather">
+  <view class="normalWeather">
+  <view>{{dreamResult[1].date}}</view>
+  <view>{{dreamResult[1].week}}</view>
+
+  <view class="okWeather1">{{dreamResult[1].weather}}</view>
+  <view class="okWeather2">
+    {{dreamResult[1].lowest}}
+    <text>-</text>
+    {{dreamResult[1].highest}}
+  </view>
+
+  <view>
+    <text class='realWeather'>平均气温：</text>
+    <view>{{dreamResult[1].real}}</view>
+  </view>
+</view>
+  <view class='weather_image'>
+  <image src="{{dreamResult[1].weatherimg}}" ></image>
+  </view>
+</view>
+<view class="unNormalWeather">
+<view class="weather001">
+  <view>
+    <text>降水量（mm）：</text>
+    <view>{{dreamResult[1].pcpn}}</view>
+  </view>
+  <view>
+    <text>日出时间：</text>
+    <view>{{dreamResult[1].sunrise}}</view>
+  </view>
+  <view>
+    <text>日落时间：</text>
+    <view>{{dreamResult[1].sunset}}</view>
+  </view>
+</view>
+<view>
+  <view>{{dreamResult[1].wind}}</view>
+  <view>{{dreamResult[1].windsc}}</view>
+</view>
+</view>
+  <view class="tipso">
+    <text class="tipsa">温情提示：</text>
+    <view>{{dreamResult[1].tips}}</view>
+  </view>
+
+
+</view>
+ 
+<!--3-->
+<view class="tabs" hidden="{{currentTab!==2}}">
+  <view class="tabsBack"/>
+  <view class="imageWeather">
+  <view class="normalWeather">
+  <view>{{dreamResult[2].date}}</view>
+  <view>{{dreamResult[2].week}}</view>
+
+  <view class="okWeather1">{{dreamResult[2].weather}}</view>
+  <view class="okWeather2">
+    {{dreamResult[2].lowest}}
+    <text>-</text>
+    {{dreamResult[2].highest}}
+  </view>
+
+  <view>
+    <text class='realWeather'>平均气温：</text>
+    <view>{{dreamResult[2].real}}</view>
+  </view>
+</view>
+  <view class='weather_image'>
+  <image src="{{dreamResult[2].weatherimg}}" ></image>
+  </view>
+</view>
+<view class="unNormalWeather">
+<view class="weather001">
+  <view>
+    <text>降水量（mm）：</text>
+    <view>{{dreamResult[2].pcpn}}</view>
+  </view>
+  <view>
+    <text>日出时间：</text>
+    <view>{{dreamResult[2].sunrise}}</view>
+  </view>
+  <view>
+    <text>日落时间：</text>
+    <view>{{dreamResult[2].sunset}}</view>
+  </view>
+</view>
+<view>
+  <view>{{dreamResult[2].wind}}</view>
+  <view>{{dreamResult[2].windsc}}</view>
+</view>
+</view>
+  <view class="tipso">
+    <text class="tipsa">温情提示：</text>
+    <view>{{dreamResult[2].tips}}</view>
+  </view>
+
+
+</view>
+
+<!--4-->
+<view class="tabs" hidden="{{currentTab!==3}}">
+  <view class="tabsBack"/>
+  <view class="imageWeather">
+  <view class="normalWeather">
+  <view>{{dreamResult[3].date}}</view>
+  <view>{{dreamResult[3].week}}</view>
+
+  <view class="okWeather1">{{dreamResult[3].weather}}</view>
+  <view class="okWeather2">
+    {{dreamResult[3].lowest}}
+    <text>-</text>
+    {{dreamResult[3].highest}}
+  </view>
+
+  <view>
+    <text class='realWeather'>平均气温：</text>
+    <view>{{dreamResult[3].real}}</view>
+  </view>
+</view>
+  <view class='weather_image'>
+  <image src="{{dreamResult[3].weatherimg}}" ></image>
+  </view>
+</view>
+<view class="unNormalWeather">
+<view class="weather001">
+  <view>
+    <text>降水量（mm）：</text>
+    <view>{{dreamResult[3].pcpn}}</view>
+  </view>
+  <view>
+    <text>日出时间：</text>
+    <view>{{dreamResult[3].sunrise}}</view>
+  </view>
+  <view>
+    <text>日落时间：</text>
+    <view>{{dreamResult[3].sunset}}</view>
+  </view>
+</view>
+<view>
+  <view>{{dreamResult[3].wind}}</view>
+  <view>{{dreamResult[3].windsc}}</view>
+</view>
+</view>
+  <view class="tipso">
+    <text class="tipsa">温情提示：</text>
+    <view>{{dreamResult[3].tips}}</view>
+  </view>
+
+
+</view>
+
+<!--5-->
+<view class="tabs" hidden="{{currentTab!==4}}">
+  <view class="tabsBack"/>
+  <view class="imageWeather">
+  <view class="normalWeather">
+  <view>{{dreamResult[4].date}}</view>
+  <view>{{dreamResult[4].week}}</view>
+
+  <view class="okWeather1">{{dreamResult[4].weather}}</view>
+  <view class="okWeather2">
+    {{dreamResult[4].lowest}}
+    <text>-</text>
+    {{dreamResult[4].highest}}
+  </view>
+
+  <view>
+    <text class='realWeather'>平均气温：</text>
+    <view>{{dreamResult[4].real}}</view>
+  </view>
+</view>
+  <view class='weather_image'>
+  <image src="{{dreamResult[4].weatherimg}}" ></image>
+  </view>
+</view>
+<view class="unNormalWeather">
+<view class="weather001">
+  <view>
+    <text>降水量（mm）：</text>
+    <view>{{dreamResult[4].pcpn}}</view>
+  </view>
+  <view>
+    <text>日出时间：</text>
+    <view>{{dreamResult[4].sunrise}}</view>
+  </view>
+  <view>
+    <text>日落时间：</text>
+    <view>{{dreamResult[4].sunset}}</view>
+  </view>
+</view>
+<view>
+  <view>{{dreamResult[4].wind}}</view>
+  <view>{{dreamResult[4].windsc}}</view>
+</view>
+</view>
+  <view class="tipso">
+    <text class="tipsa">温情提示：</text>
+    <view>{{dreamResult[4].tips}}</view>
+  </view>
+
+
+</view>
+
+
+
+
+   
+</view>

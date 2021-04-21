@@ -1,0 +1,40 @@
+<!--pages/cangtou/cangtou.wxml-->
+<view class="title"></view>
+
+<view class="word">
+  <input bindinput='word' value="{{word}}" placeholder='请输入要使用的词，格式为2-8个汉字' class="input"></input>
+</view>
+
+<radio-group bindchange="radioChange_len">格式：
+  <radio value="0" checked="true">五言诗</radio>
+  <radio value="1">七言诗</radio>
+</radio-group>
+
+<radio-group bindchange="radioChange_pat">押韵：
+  <radio value="1" checked="true">双句一押</radio>
+  <radio value="2">双句押韵</radio>
+  <radio value="3">一三四押</radio>
+</radio-group>
+
+<radio-group bindchange="radioChange_type">藏位：
+  <radio value="1" checked="true">藏头</radio>
+  <radio value="2">藏尾</radio>
+  <radio value="3">藏中</radio>
+  <radio value="4">递增</radio>
+  <radio value="5">递减</radio>
+</radio-group>
+
+<button type="primary" bindtap="getapi">获取藏头诗</button>
+
+<view wx:if="{{showmodal}}" style="white-space:pre-wrap">{{szbresult[0].list}}
+  {{szbresult[1].list}}
+  {{szbresult[2].list}}
+</view>
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+ 
+<view class="modalDlg" wx:if="{{showModal}}"> 
+ <view class="error"></view>
+ <text>没有合适的藏头诗哦，请确认您输入的词是否正确</text>
+ <button class="go" bindtap="go" >返回</button>
+</view>

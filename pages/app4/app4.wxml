@@ -1,0 +1,28 @@
+<!--pages/api4/api4.wxml-->
+<!-- <text>pages/api4/api4.wxml</text> -->
+<view class="container">
+  
+   <image src='https://i.postimg.cc/prQHJKz1/history-title.png'></image>
+  <view class="search01">
+    <view class="search02">
+     <!--  <image class="main-bg" src="https://z3.ax1x.com/2021/04/20/cH20VP.png"></image> -->
+   <view class="pickers">
+     <view class="ohhh">
+      <text >
+        请选择日期：
+      </text>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+        <view class="picker">
+          当前选择：<view class="sb">{{multiArray[0][multiIndex[0]]}}月，{{multiArray[1][multiIndex[1]]}}日</view>
+        </view>
+      </picker>
+    </view>
+      <button  class="buttons"  bindtap="test" >历史上的今天</button>
+    </view>
+
+
+
+ </view>
+</view>
+ </view>
+ 

@@ -1,0 +1,149 @@
+/* pages/stella/stella.wxss */
+page{
+  background-image: url("https://i.loli.net/2021/04/18/aL7GSWzOUQ4ieKl.png");
+  }
+.Virgo-btn{
+    width: 200rpx;
+    height: 200rpx;
+    margin-left: 30px;
+    /* float: left;
+    margin-left: 20px;
+    margin-top: 20px; */
+}
+.Aquarius-btn{
+  width: 200rpx;
+  height: 200rpx;
+  /* margin-right: 20px;
+  float: right;
+  margin-top: 20px; */
+}
+.Pisces-btn{
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 20;
+  /* margin-left: 120px;
+  margin-top: 20px; */
+}
+
+.instruction{
+  margin-left: 40px;
+  font-weight: bold;
+  font-family: fantasy;
+  color: white;
+}
+
+.Cancer-btn{
+  width: 200rpx;
+    height: 200rpx;
+    margin-left: 30px;
+}
+
+.Aries-btn{
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.Capricorn-btn{
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 20;
+}
+
+.Sagittarius-btn{
+  width: 200rpx;
+  height: 200rpx;
+  margin-left: 30px;
+  /* float: left;
+  margin-left: 20px;
+  margin-top: 20px; */
+}
+.Leo-btn{
+width: 200rpx;
+height: 200rpx;
+/* margin-right: 20px;
+float: right;
+margin-top: 20px; */
+}
+.Gemini-btn{
+width: 200rpx;
+height: 200rpx;
+margin-right: 20;
+/* margin-left: 120px;
+margin-top: 20px; */
+}
+
+.Libra-btn{
+  width: 200rpx;
+  height: 200rpx;
+  margin-left: 30px;
+}
+.Scorpio-btn{
+  width: 200rpx;
+  height: 200rpx;
+}
+.Taurus-btn{
+  width: 200rpx;
+  height: 200rpx;
+  margin-right: 20;
+}
+
+/* 弹出层 */
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  z-index:1;
+}
+ 
+.modal-dialog {
+  overflow: hidden;
+  position: fixed;
+  top: 15%;
+  background: lemonchiffon;
+  border-radius: 30rpx; 
+  right: 5%;
+  height: 800rpx;
+  width: 90%;
+  z-index: 2;
+}
+.view-image{
+  width: 580rpx;
+  height: 580rpx;
+  margin-left: 50rpx;
+}
+.guanbi{
+  position:absolute;
+  width: 40rpx;
+  height:40rpx;
+  background-size:100%;
+  text-align: center; 
+  top: 10px; 
+  right: 10px;
+  font-size: 14px;
+  line-height: 50rpx;
+}
+.t-title{
+  font-size:42rpx;
+  text-align: center;
+  margin: 30rpx 0;
+  font-weight: bold;
+}
+.b-title{
+  font-size:28rpx;
+  text-align:center;
+  margin-top:20rpx;
+}
+
+.Type{
+  margin-left:20px;
+  margin-top: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Content{
+  margin-left:20px;
+}
