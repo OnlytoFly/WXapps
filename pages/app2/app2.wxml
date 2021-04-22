@@ -4,6 +4,14 @@
     <image class="main-bg" src="../../icon/MBE风格常用图标-天气.png"></image>
     <view>
     <view class="city">{{dreamResult[0].area}}</view>
+    <view class="choice">
+    <picker class="pick" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker">
+          当前定位：{{region[0]}}，{{region[1]}}，{{region[2]}}
+        </view>
+      </picker>
+      <view  class="buttonFirst" bindtap="changeLoad">确定</view>
+    </view>
 <!--     <input class="input" placeholder="要查询的城市名"/>
     <button></button> -->
   </view>

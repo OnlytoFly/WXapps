@@ -8,6 +8,7 @@ Page({
     dreamCode:'',
     showModal:false,
      showmodal:false,
+     region: ['辽宁省', '大连市', '金州区']
    /*  showDialog: false */
   },
 
@@ -25,7 +26,7 @@ Page({
         method:'GET',
         data:{
             key:'e14365791172cb3feac0c7ec2b4ed403',
-            city:'大连市',
+            city:that.data.region[2],
         },
         success: function (res) {
           console.log(res.data)
@@ -49,6 +50,37 @@ Page({
         }
       })
   },
+  changeLoad: function() {
+    var that = this;
+    wx.request({
+      url: 'http://api.tianapi.com/txapi/tianqi/index', 
+      method:'GET',
+      data:{
+          key:'e14365791172cb3feac0c7ec2b4ed403',
+          city:that.data.region[2],
+      },
+      success: function (res) {
+        console.log(res.data)
+        if(res.data.code == 200){
+        that.setData({
+          dreamCode:res.data.code,
+        dreamResult:res.data.newslist,
+        showmodal:true
+        })
+      }
+      if(res.data.code!=200){
+          that.setData({
+            showModal:true,
+            content: res.data.msg
+          }) 
+          return false
+      }
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    })
+},
   submit: function() {
     this.setData({
     showModal: true
@@ -60,7 +92,15 @@ Page({
     showmodal:false
     })
     this.onLoad
-   }
+   },
+   //省市区选择器：
+  bindRegionChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      region: e.detail.value
+    })
+  }
+
 
     /**
   * 控制 pop 的打开关闭

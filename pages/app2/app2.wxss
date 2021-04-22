@@ -128,5 +128,18 @@ page{
   font-family: KaiTi;
   color: #ffee00;
 }
+.buttonFirst{
+  width: 100rpx;
+  height: 50rpx;
+  font-size: 30rpx;
+  color: rgb(137, 235, 218);
+}
+.choice{
+  display: flex;
+  flex-flow: row;
+}
+.pick{
+  width: 85%;
+}
 
 
