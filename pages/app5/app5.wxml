@@ -1,91 +1,40 @@
-<!--pages/api5/api5.wxml-->
-<!--pages/api2/api2.wxml-->
-<!-- <text>pages/api2/api2.wxml</text> -->
-<view class="content">
-   <!--  <image class="main-bg" src="../../icon/MBE风格常用图标-天气.png"></image> -->
-    <view>
-    <!-- <view class="city">{{dreamResult[0].area}}</view> -->
-<!--     <input class="input" placeholder="要查询的城市名"/>
-    <button></button> -->
+<!--pages/cook/cook.wxml-->
+<!-- <view>菜谱烹饪</view> -->
+<!-- <image mode="widthFix" src="https://i.loli.net/2021/04/15/yQq1L9grUvKcPJD.png"></image> -->
+<swiper autoplay>
+    <swiper-item> <image class="im" mode="widthFix" src="https://i.loli.net/2021/04/15/yQq1L9grUvKcPJD.png"/></swiper-item>
+    <swiper-item> <image class="im" mode="widthFix" src="https://i.loli.net/2021/04/15/rj2RZemhlOHBPs8.png"/></swiper-item>
+    <swiper-item> <image class="im" mode="widthFix" src="https://i.loli.net/2021/04/15/zdypqgZXSYT3OKR.png"/></swiper-item>
+    <swiper-item> <image class="im" mode="widthFix" src="https://i.loli.net/2021/04/15/JXxhMqbAgjn8sTL.png"/></swiper-item>
+    <swiper-item> <image class="im" mode="widthFix" src="https://i.loli.net/2021/04/15/mQ1MPZpsEkgeHt3.png"/></swiper-item>
+</swiper>
+<view class="temperary">
+    <view class="Name_food">
+        <image class="show-btn" bindtap="showDialogBtn" src="https://i.loli.net/2021/04/16/7b9fBQTJrw8NPC2.png"></image>
+       <image class="out-btn" bindtap="test" src="https://i.loli.net/2021/04/16/79r6LQndAbPHTmy.png"></image>
+    </view>
+</view>
+<!-- <button class="show-btn" bindtap="showDialogBtn">修改菜名</button> -->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">想做什么菜？</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="text"  bindinput="inputChange" class="input" placeholder="请输入菜名，原材料也可以哦！"></input>
+    </view>
   </view>
-<!--导航条-->
-<view class="navbar">
-  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
-</view>
- 
-<!--1-->
-<view class="tabs" hidden="{{currentTab!==0}}">
-  <view class="search02">
-    <view>
-    <view>中 草 药：</view>
- <input class="inserta" style="border: 1px solid;border-color: black;width:80%;"
- placeholder="请输入中草药的名称" maxlength="16" type="text" focus="false" bindinput="valueInputFirst"/>
-</view>
-<view>
-<button plain style=" font-size: 25px; color:#205706e3;  border:0px;" class="buttons" type="primary" bindtap="test1" >查询中草药</button>
-</view>
-
-
-
-
-</view>
-</view>
-
-
-
-
-
- 
-<view class="tabs1" hidden="{{currentTab!==1}}">
-
-    <view class="search02a">
-    
-      <view class="sba">
- 药 物：<input class="inserta" style="border: 1px solid;border-color: black;width:80%;"
- placeholder="请输入要查询的药物名称"  maxlength="16" type="text" focus="false" bindinput="valueInputSecond"/>
-</view>
-
-<view>
-<button plain style=" font-size:25px; color: #09449ce3;  border-color:#09449ce3; " class="buttons" type="primary" bindtap="test2" >药物说明书查询</button>
-</view>
-
-
-
-</view>
-</view>
-
-<block>   
-<scroll-view class="modal-dialog" scroll-y='true' wx:for="{{dreamResult}}">
-  <text>名称：</text>
-  <view class="sbaaaa">
-    {{dreamResult[0].title}}
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
   </view>
-<!--   <text>
-    {{dreamResult[0].content}}
-  </text> -->
-  <text  >
-    {{contents1}}
-  </text>
-  <button class="go" bindtap="go" >返回</button>
-  </scroll-view>
-</block>
-
-<view class="modalDlg" wx:if="{{showModal}}">
-  <view class="error"></view>
- <text>呜呜呜，没有查到这个药</text>
- <button class="go" bindtap="go" >返回</button>
 </view>
-
+<!-- <button type="primary" bindtap="test">菜谱获取测试</button> -->
+<view class="outputBox" wx:for="{{recipeResult}}" wx:for-index="id" wx:for-item="item">
+   <view  style="white-space:pre-line"><view class="catalog">菜谱分类：</view>{{recipeResult[id].type_name}}</view>
+   <view  style="white-space:pre-line"><view class="Name">菜肴名称：</view>{{recipeResult[id].cp_name}}</view>
+   <view  style="white-space:pre-line"><view class="craft">菜肴做法：</view>{{recipeResult[id].zuofa}}</view>
+   <view  style="white-space:pre-line"><view class="special">菜肴特性：</view>{{recipeResult[id].texing}}</view>
+   <view  style="white-space:pre-line"><view class="hint">菜肴提示：</view>{{recipeResult[id].tishi}}</view>
+   <view  style="white-space:pre-line"><view class="help">准备调料：</view>{{recipeResult[id].tiaoliao}}</view>
+   <view  style="white-space:pre-line"><view class="ingredient">原料食材：</view>{{recipeResult[id].yuanliao}}</view>
 </view>
-
-
-
-
-
-
-
-
-
-
-
-

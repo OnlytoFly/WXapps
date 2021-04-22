@@ -21,7 +21,8 @@
   <text class="kai">星期四</text>
   <text class="kai">阴</text>
 </view>
-<view class="kai">{{dreamResult[0].content}}</view>
+<!-- <scroll-view class="modal-dialog" scroll-y='true' wx:for="{{dreamResult}}"></scroll-view> -->
+<view class="kai" >{{dreamResult[0].content}}</view>
 <image class="dog" src="https://i.postimg.cc/ZndZLWJS/image.png" bindtap="test"></image> 
 </view>
 

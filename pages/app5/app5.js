@@ -1,249 +1,117 @@
-// pages/api5/api5.js
+// pages/cook/cook.js
 Page({
-
+ 
   /**
    * 页面的初始数据
    */
-  data:{
-    navbar: ['中草药查询', '药物说明书查询'],
-    currentTab: 0,
-    dreamResult:[],
-    dreamCode:'',
-    zhongyao:'',
-    yao:'',
-    contents1:'',
-    showModal:false,
-    showmodal:false,
-  /*   contents2:'', */
-   /*  showDialog: false */
+  data: {
+  recipeCode:'',
+  recipeResult:[],
+  foodResult:"",
+  showModal: false
   },
-  change:function(str){
-     str.replace(/<br>/g,"\n")
-  },
-  valueInputFirst:function(e){
+  showDialogBtn: function() {
     this.setData({
-      zhongyao:e.detail.value
-    }),
-    console.log(this.data.zhongyao)
+      showModal: true
+    })
   },
-  valueInputSecond:function(e){
-    this.setData({
-      yao:e.detail.value
-    }),
-    console.log(this.data.yao)
+  preventTouchMove: function () {
   },
-  
-    navbarTap: function(e){
-    this.setData({
-      currentTab: e.currentTarget.dataset.idx
-    }) 
-  },
- /*   var dreamResult[i].content = dreamResult[i].content.replace(/<br>/g,"\n")
-   var str = that.data.content.split('\n').join('&hc') */
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
   onUnload: function () {
-   
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-  test1:function(){
-    var self=this;
-    var tmp='';
-    wx.request({
-      url: 'http://api.tianapi.com/txapi/zhongyao/index', 
-      method:'GET',
-      data:{
-        key:'e14365791172cb3feac0c7ec2b4ed403',
-        word:self.data.zhongyao,
-      },
-      success: function (res) {
-        console.log(res.data)
-        if(res.data.code!=200){
-          self.setData({
-            showModal:true
-          })
-          return false
-        }
-        if(res.data.code=200){
-        tmp=res.data.newslist[0].content.replace(/<br>/g, "\n")
-        try{
-            
-            tmp=tmp.replace(/<p>/g, " ")
-        }
-        catch(err) {
-
-        }
-        try{
-            
-          tmp=tmp.replace(/<\/p>/g, " ")
-      }
-      catch(err) {
-
-      }
-      try{
-            
-        tmp=tmp.replace(/<\/P>/g, " ")
-    }
-    catch(err) {
-
-    }
-        try{
-          tmp=tmp.content.replace(/<P>/g, " ")
-          
-      }
-      catch(err) {
-
-      }
-       
-        self.setData({
-          dreamCode:res.data.code,
-          dreamResult:res.data.newslist,
-         
-          contents1:tmp
-        })
-        console.log(tmp) 
-      }
-   
-      },
-      fail: function (err) {
-        console.log(err)
-      }
+    wx.reLaunch({
+      url: 'pages/home/home'
     })
-    
-/*     let contents1=dreamResult[0].content
-    contents1.replace(/<br>/g, "\n")
-    contents1.replace(/<P>/g, " ") */
-/*     dreamResult[0].content.replace(/<br>/g, "\n");
-    dreamResult[0].content.replace(/<P>/g, " ") */
   },
-  test2:function(){
-    var self=this;
-    var tmp=''
-    wx.request({
-      url: 'http://api.tianapi.com/txapi/yaopin/index', 
+
+  /**
+   * 隐藏模态对话框
+   */
+  hideModal: function () {
+    this.setData({
+      showModal: false
+    });
+  },
+  /**
+   * 对话框取消按钮点击事件
+   */
+  onCancel: function () {
+    this.hideModal();
+  },
+  /**
+   * 对话框确认按钮点击事件
+   */
+  onConfirm: function () {
+    this.hideModal();
+  },
+  onLoad() {
+    self = this
+    if (wx.getUserProfile) {
+      this.setData({
+        canIUseGetUserProfile: true
+      })
+    }
+  },
+  inputChange:function(e){
+    console.log(e)
+    this.setData({
+      foodResult:e.detail.value
+      //foodResult:'黄瓜'
+    })
+  },
+  test:function(foodResult) { 
+    //console.log("esfesw"+this.data.foodResult)
+      wx.request({
+      url: 'http://api.tianapi.com/txapi/caipu/index',
       method:'GET',
       data:{
-        key:'e14365791172cb3feac0c7ec2b4ed403',
-        word:self.data.yao,
+        key:'de654987fe3a7b4460118b2fdbd184fa',
+        word :this.data.foodResult,
+        num:'2'
       },
-      success: function (res) {
+      success: function(res){
         console.log(res.data)
-        if(res.data.code!=200){
-          self.setData({
-            showModal:true
+        if(res.data.msg=="数据返回为空"||res.data.msg=="关键词不得为空"||res.data.msg=="参数值不得为空"){
+          console.log(111); 
+         /*  wx.showModal({
+                        title: '提示',
+                        content: '您确定要删除该文件吗？',
+                        showCancel: false, //是否显示取消按钮-----》false去掉取消按钮
+                        cancelColor: 'skyblue', //取消文字的颜色
+                        confirmText: "是", //默认是“确定”
+                        confirmColor: 'skyblue', //确定文字的颜色
+                        success: function(res) {
+                          if (res.cancel) {
+                            //点击取消
+                            console.log("您点击了取消")
+                          } else if(res.confirm){
+                            //点击确定
+                           console.log("您点击了确定")
+                          }
+                        }   
+                    }) */
+           wx.showModal({
+            title: '提示！',       
+            content: '果咩呐，输入菜谱不合理或者找不到菜谱的样子呢',       
+            showCancel: false,
+            confirmText: "好哒",
+            success: function (res) {      
+              if (res.confirm) {//这里是点击了确定以后      
+                console.log('用户点击确定')       
+              } else {//这里是点击了取消以后       
+                console.log('用户点击取消')
+              }
+            }
           })
-          return false
-        }   if(res.data.code=200){
-       
-        tmp=res.data.newslist[0].content.replace(/<br \/>/g, "\n")
-        try{
-          tmp=tmp.content.replace(/<P>/g, " ")
-          
-      }
-      catch(err) {
-
-      }
-      try{
-        tmp=tmp.content.replace(/<P> /g, " ")
-        
-    }
-    catch(err) {
-
-    }
-        try{
-            
-            tmp=tmp.replace(/<p>/g, " ")
-        }
-        catch(err) {
-
-        }
-        try{
-            
-          tmp=tmp.replace(/<\/p>/g, " ")
-      }
-      catch(err) {
-
-      }
-      try{
-            
-        tmp=tmp.replace(/<\/P>/g, " ")
-    }
-    catch(err) {
-
-    }
-    
-        self.setData({
-          dreamCode:res.data.code,
-          dreamResult:res.data.newslist,
-          contents1:tmp
+        }else{self.setData({
+          recipeCode: res.data.code,
+          recipeResult:res.data.newslist
         })
       }
       },
-      fail: function (err) {
-        console.log(err)
-      }
-    })
-  },
-  submit: function() {
-    this.setData({
-    showModal: true
-    })
-   }, 
-   go: function() { 
-    this.setData({
-    showModal: false,
-    showmodal:false,
-    dreamResult:[],
-    })
-    this.onLoad
-   }
+      fail: function () {
+        // fail
+      } 
+     }) 
+  }
 })
+  
