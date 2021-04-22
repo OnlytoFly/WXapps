@@ -56,6 +56,3 @@ padding-right:0rpx;
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
 }
-.imag{
-  /* width: 1600rpx; */
-}

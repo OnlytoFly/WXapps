@@ -195,6 +195,7 @@ Page({
           domain:this.data.i_domain
         },
         success:function(res){
+          console.log(res.data)
           if (res.data.newslist[0].count=="") {
             self.setData({
               showModal:true,
